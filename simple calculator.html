@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style></style>
+    <script>
+        var no1, txt1, v1=0, v2, choice='e';
+
+        // function f3{
+        //     document.getElementById('txt').value= "";
+        // }
+        function f1(value){
+            no1=value;
+            txt1=document.getElementById('txt').value;
+            document.getElementById('txt').value=txt1+no1;
+        }
+
+        function f2(value)
+
+    {
+        if(value=='a'){
+        v1=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+        choice=value;
+        }
+        else if(value=='s')
+        {
+         v1=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+        choice=value;  
+        }
+
+        else if(value=='p'){
+        v1=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+        choice=value;
+        }
+
+        else if(value=='d'){
+        v1=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+        choice=value;
+        }
+
+       else if(value=='m'){
+        v1=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+        choice=value;
+        }
+
+        else{
+            v2=document.getElementById('txt').value;
+        document.getElementById('txt').value="";
+            switch(choice)
+            {
+                case 'a' : 
+                ans = parseInt(v1) + parseInt(v2);
+                document.getElementById('txt').value=ans;
+                break;
+
+                case 's' : 
+                ans = parseInt(v1) - parseInt(v2);
+                document.getElementById('txt').value=ans;
+                break;
+
+                case 'm' : 
+                ans = parseInt(v1) * parseInt(v2);
+                document.getElementById('txt').value=ans;
+                break;
+            
+                case 'd' : 
+                ans = parseInt(v1) / parseInt(v2);
+                document.getElementById('txt').value=ans;
+                break;
+
+                case 'p' : 
+                ans = parseInt(v1) % parseInt(v2);
+                document.getElementById('txt').value=ans;
+                break;
+            }
+        }
+
+        
+    }
+
+    </script>
+</head>
+<body>
+    <table border="3px" width="300px" cellspacing="20px" cellpadding="10px" align="center">
+
+        <tr>
+            <td colspan="3" style="border: none;">
+            <input type="text" name="" id="txt" style="height: 300; height: 30px; font-size: 25px; direction: rtl;">
+            </td>
+            
+            <td style="background-color: crimson;">ON/OFF</td>
+        </tr>
+        <tr>
+            <td onclick="f1(7)">7</td>
+            <td onclick="f1(8)">8</td>
+            <td onclick="f1(9)">9</td>
+            <td onclick="f2('m')">*</td>
+
+          <td > <button data-action="clear">AC</button> </td>
+            <!-- <td style="background-color: rgb(11, 255, 230);">AC</td> -->
+
+        </tr>
+
+        <tr>
+            <td onclick="f1(4)">4</td>
+            <td onclick="f1(5)">5</td>
+            <td onclick="f1(6)">6</td>
+            <td onclick="f2('s')">-</td>
+            <td onclick="f2('p')">%</td>
+
+        </tr>
+        <tr>
+            <td onclick="f1(1)">1</td>
+            <td onclick="f1(2)">2</td>
+            <td onclick="f1(3)">3</td>
+            <td rowspan="2" onclick="f2('a')">+</td>
+            <td onclick="f2('d')">/</td>
+
+        </tr>
+        <tr>
+            <td onclick="f1(0)">0</td>
+            <td>+/-</td>
+            <td>.</td>
+           
+            <td onclick="f2('e')" >=</td>
+
+        </tr>
+    </table>
+</body>
+</html>
